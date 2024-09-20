@@ -1,0 +1,65 @@
+endpoint:
+  get:
+    tags:
+      - app-project
+    summary: Project info
+    description: Blandit deserunt meliore aliquet ubique. Interpretaris reformidans pretium fastidii maiestatis sale audire ocurreret praesent decore. Suscipiantur quisque legimus numquam movet. Tale dicant dico dico neglegentur viris veritus.
+    parameters:
+      - name: app_project_id
+        in: path
+        description: Tempor malesuada senserit tractatos ligula usu. Referrentur eruditi errem ligula arcu vivendo porta qui.
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas.yaml#/schemas/AppProject'
+            examples:
+              good:
+                value:
+                  id: '1'
+                  app_id: '20'
+                  parent_app_project_id: '12'
+                  status: CREATING
+                  created: 2021-04-15 12:30:01.951000
+                  name: My app-project
+                  item_price: 0.2
+                  parameters: { }
+                  errors: [ ]
+                  read_only: false
+                  app:
+                    id: '1'
+                    name: Some app
+
+              bad:
+                value:
+                  id: '1'
+                  app_id: '20'
+                  parent_app_project_id: ''
+                  status: ERROR
+                  created: 2021-04-15 12:30:01.951000
+                  name: My app-project
+                  item_price: 0.2
+                  parameters: { }
+                  errors:
+                    - code: DOES_NOT_EXIST
+                      message: Commodo evertitur consetetur evertitur tale dolor dui melius porta.
+                      payload:
+                        instruction_class: dog
+                        instruction_field: example
+                  read_only: false
+                  app:
+                    id: '1'
+                    name: Some app
+
+
+      '404':
+        description: Doming impetus persecuti sonet posidonium tota.
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas.yaml#/schemas/RequestError'

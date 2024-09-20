@@ -19,3 +19,47 @@ navigation:
 items:
   - name: Документация
     href: about.md
+  - name: Услуги
+    expanded: true
+    href: services/index.yaml
+    items:
+      - name: Обновление цен и наличия
+        href: ./services/sites-update/index.yaml
+        items:
+          - name: На сайте
+            href: ./services/sites-update/site-update.md
+          - name: На Onliner
+            href: ./services/sites-update/onliner-update.md
+          - name: Загрузка прайсов
+            expanded: true
+            href: ./services/sites-update/price-handler/index.yaml
+            items:
+              - name: Загрузка прайсов в ручную
+                href: ./services/sites-update/price-handler/price-handler.md
+              - name: Автоматическая загрузка прайса
+                href: ./services/sites-update/price-handler/price-handler-auto.md
+          - name: Настройка ценообразования
+            expanded: true
+            href: ./services/sites-update/pricing/pricing.yaml
+            items:
+              - name: Расценка
+                href: ./services/sites-update/pricing/quotation.md
+              - name: Приоритеты
+                href: ./services/sites-update/pricing/priorities.md
+              - name: Доставка
+                href: ./services/sites-update/pricing/delivery.md
+      - name: Сопоставление товаров
+        href: ./services/mapping/index.yaml
+        items:
+          - name: Сопоставление в прайс-листах
+            href: ./services/mapping/mapping-instruction-file.md
+          - name: Сопоставление по сайтам
+            href: ./services/mapping/mapping-instruction.md
+      - name: Мониторинг цен конкурентов
+        href: ./services/monitoring/index.yaml
+      - name: Описания товаров
+        href: ./services/product-descriptions.md
+  - name: FAQ
+    href: faq/index.yaml
+  - name: API
+    href: api/index.yaml

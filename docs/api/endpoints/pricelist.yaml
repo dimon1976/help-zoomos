@@ -1,0 +1,84 @@
+endpoint:
+  get:
+    tags:
+      - Прайс лист
+    parameters:
+      - name: api-key
+        in: path
+        description: Индивидуальный API ключ
+        required: true
+        schema:
+          type: string
+      - name: all
+        in: query
+        description: 0 - только активные позиции, 1 - все позиции
+        required: false
+        schema:
+          type: string      
+      - name: supplierInfo
+        in: query
+        description: 0 - без информации о поставщиках
+        required: false
+        schema:
+          type: string  
+      - name: warrantyInfo
+        in: query
+        description: 0 - без информации о гарантии
+        required: false
+        schema:
+          type: string  
+
+      - name: competitorInfo
+        in: query
+        description: 0 - без информации о конкурентах
+        required: false
+        schema:
+          type: string  
+
+      - name: deliveryInfo
+        in: query
+        description: 0 - без информации о доставке
+        required: false
+        schema:
+          type: string  
+
+      - name: offset
+        in: query
+        description: номер позиции, с которой начинается выдача (обычно offset = limit * n)
+        required: false
+        schema:
+          type: string  
+
+      - name: limit
+        in: query
+        description: ограничение кол-ва строк
+        required: false
+        schema:
+          type: string  
+
+      - name: checkImages
+        in: query
+        description: 1 - проверять наличие картинок (увеличивает время ответа)
+        required: false
+        schema:
+          type: string  
+
+
+
+
+    summary: Получение прайслиста
+    description: Авторизационный ключ необходимо передавать во всех запросах GET-параметром key. Если ресурс API вызван без авторизационного ключа или в запросе передан недействительный ключ, сервер ZOOMOS возвращает ошибку '500'. <div class="yfm-note yfm-accent-info" note-type="info"><p class="yfm-note-title" yfm2xliff-explicit="true"><em><strong>Пример</strong></em></p><div class="yfm-note-content"><p><a href="https://api.zoomos.by/pricelist?key=api-help" title="https://api.zoomos.by/pricelist?key=api-help">https://api.zoomos.by/pricelist?key=api-help</a></p></div></div>
+    responses:
+      '200':
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas.yaml#/schemas/PriceListBodyJsonResponse'
+        description: OK   
+
+      '500':        
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas.yaml#/schemas/PriceListError'
+        description: BAD

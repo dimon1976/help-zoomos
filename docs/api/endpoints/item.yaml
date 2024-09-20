@@ -1,0 +1,32 @@
+endpoint:
+  get:
+    tags:
+      - item
+    summary: Project item
+    description: <div class="yfm-note yfm-accent-tip" note-type="tip"><p><strong>Попробуйте <a href="https://toloka.ai/docs/api/apps-reference/#get-/app-projects/-app_project_id-/items/-item_id-" target="_blank" rel="noreferrer noopener">новый справочник API</a>:</strong> подробно расписанные параметры, примеры запросов и ответов, образцы кода на разных языках программирования.</p></div>
+    parameters:
+      - name: app_project_id
+        in: path
+        description: Pharetra docendi autem explicari affert graeci venenatis ante adhuc rhoncus.
+        required: true
+        schema:
+          type: string
+      - name: item_id
+        in: path
+        description: Mentitum adipiscing meliore detracto hendrerit vim fuisset.
+        required: true
+        schema:
+          type: string
+    responses:
+      '200':
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas.yaml#/schemas/Item'
+        description: OK
+      '404':
+        description: Vivamus nonumy posuere comprehensam imperdiet donec suavitate vero melius.
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas.yaml#/schemas/RequestError'
