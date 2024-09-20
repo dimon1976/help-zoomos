@@ -1,0 +1,4 @@
+allowHTML: true
+# outputFormat: html
+# supportGithubAnchors: true
+# needToSanitizeHtml: false

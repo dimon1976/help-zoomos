@@ -1,0 +1,21 @@
+href: index.yaml
+navigation:
+  logo:
+    url: ./index.html
+    text: Zoomos
+    target: _self
+  header:
+    leftItems:
+      - type: link
+        text: Документация
+        url: ./about.html
+        target: _self
+      - type: link
+        text: API
+        url: ./api/index.html
+        target: _self
+    rightItems:
+      - type: controls
+items:
+  - name: Документация
+    href: about.md

@@ -1,0 +1,10 @@
+title: Сервисы
+description: >-
+      
+meta:
+  title: Сервисы
+  noIndex: true
+links:
+- title: Обновление сайта
+  description: Пошаговое руководство по настройке обновления сайта.
+  # href: sites-update/
