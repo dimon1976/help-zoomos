@@ -1,0 +1,26 @@
+href: index.yaml
+navigation:
+  logo:
+    url: ./index.html
+    urlTitle: 'Вернуться на главную'
+    dark:
+      icon: _assets/logo/logo-zoomos5.png
+    light:
+      icon: _assets/logo/logo-zoomos5.png
+  header:
+    leftItems:
+      - type: link
+        text: Документация
+        url: ./about.html
+      - type: link
+        text: API
+        url: ./api/index.html
+    rightItems:
+      - type: controls
+items:
+  - name: Загрузка прайса
+    description: Пошаговое руководство по настройке загрузки прайсов по файлам.
+    href: price-handler.md
+  - name: Автоматическая загрузка прайса
+    description: Настройка загрузки прайсов по постоянной ссылке.
+    href: price-handler-auto.md

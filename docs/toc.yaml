@@ -12,16 +12,14 @@ navigation:
       - type: link
         text: Документация
         url: ./about.html
-        # target: _self
       - type: link
         text: API
         url: ./api/index.html
-        # target: _self
     rightItems:
       - type: controls
 items:
   - name: Документация
-    href: about.md
+    href: index.yaml
   - name: Услуги
     expanded: true    
     items:
