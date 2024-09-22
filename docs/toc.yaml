@@ -11,7 +11,7 @@ navigation:
     leftItems:
       - type: link
         text: Документация
-        url: ./about.html
+        url: ./index.html
       - type: link
         text: API
         url: ./api/index.html
@@ -26,7 +26,6 @@ items:
       - name: Обзор
         href: services/index.yaml
       - name: Обновление цен и наличия
-        # href: services/sites-update/index.yaml
         items:
           - name: Обзор
             href: ./services/sites-update/index.yaml
@@ -36,16 +35,18 @@ items:
             href: ./services/sites-update/onliner-update.md
           - name: Загрузка прайсов
             expanded: true
-            # href: ./services/sites-update/price-handler/index.yaml
             items:
+              - name: Обзор
+                href: ./services/sites-update/price-handler/index.yaml
               - name: Загрузка прайсов в ручную
                 href: ./services/sites-update/price-handler/price-handler.md
               - name: Автоматическая загрузка прайса
                 href: ./services/sites-update/price-handler/price-handler-auto.md
           - name: Настройка ценообразования
             expanded: true
-            # href: ./services/sites-update/pricing/pricing.yaml
             items:
+              - name: Обзор
+                href: ./services/sites-update/pricing/index.yaml
               - name: Расценка
                 href: ./services/sites-update/pricing/quotation.md
               - name: Приоритеты
@@ -53,8 +54,9 @@ items:
               - name: Доставка
                 href: ./services/sites-update/pricing/delivery.md
       - name: Сопоставление товаров
-        # href: ./services/mapping/index.yaml
         items:
+          - name: Обзор
+            href: ./services/mapping/index.yaml
           - name: Сопоставление в прайс-листах
             href: ./services/mapping/mapping-instruction-file.md
           - name: Сопоставление по сайтам

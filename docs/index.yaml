@@ -10,7 +10,7 @@ links:
   description:
   href: ./services/product-descriptions.md
 - title: Обработка прайсов поставщиков
-  description: 
+  description:
   href: ./services/sites-update/price-handler/index.yaml
 - title: Обновление торговых площадок
   description: 
@@ -20,7 +20,7 @@ links:
   href: ./services/product-descriptions.md#variant-dobavleniya-tovarov-v-winshop
 - title: Расценка товаров и формирование розничных цен
   description: 
-  href: ./services/sites-update/pricing/pricing.yaml
+  href: ./services/sites-update/pricing/index.yaml
 - title: Обновление цен и наличия на сайте
   description: 
   href: ./services/sites-update/site-update.md
