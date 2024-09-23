@@ -2,10 +2,3 @@
 
 #### {#api}
 Application Programming Interface
-
-#### {#update_generation}
-{% note warning %}
-
-Любые изменения в правилах расценки, на вкладке гарантия применяются только после формирования обновления!
-
-{% endnote %}
