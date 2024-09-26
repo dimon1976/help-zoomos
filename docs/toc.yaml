@@ -17,6 +17,7 @@ navigation:
         url: ./api/index.html
     rightItems:
       - type: controls
+      - type: search
 items:
   - name: Документация
     href: index.yaml
