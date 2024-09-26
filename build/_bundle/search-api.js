@@ -1976,11 +1976,16 @@
   var makeStrategies = (tolerance, index2, clauses, sealed) => [
     tolerance >= 0 && function precise(query) {
       query.clauses = clauses.slice();
-      for (let i = query.clauses.length - 1; i >= 0; i--) {
-        const clause = query.clauses[i];
-        if (clause.presence !== import_lunr.Query.presence.PROHIBITED && !sealed) {
-          wildcard(clause, import_lunr.Query.wildcard.TRAILING);
-          break;
+    },
+    tolerance >= 0 && function precise(query) {
+      query.clauses = clauses.slice();
+      if (!sealed) {
+        for (let i = query.clauses.length - 1; i >= 0; i--) {
+          const clause = query.clauses[i];
+          if (clause.presence !== import_lunr.Query.presence.PROHIBITED) {
+            wildcard(clause, import_lunr.Query.wildcard.TRAILING);
+            break;
+          }
         }
       }
     },
@@ -2034,10 +2039,10 @@
       return;
     }
     if (mode & import_lunr.Query.wildcard.TRAILING) {
-      clause.term = clause.term.slice(0, -1) + "*";
+      clause.term = clause.term + "*";
     }
     if (mode & import_lunr.Query.wildcard.LEADING) {
-      clause.term = "*" + clause.term.slice(1);
+      clause.term = "*" + clause.term;
     }
     clause.wildcard = mode;
     clause.usePipeline = false;

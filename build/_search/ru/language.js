@@ -294,6 +294,61 @@ var require_lunr_stemmer_support = __commonJS({
   }
 });
 
+// node_modules/lunr-languages/lunr.multi.js
+var require_lunr_multi = __commonJS({
+  "node_modules/lunr-languages/lunr.multi.js"(exports, module2) {
+    "use strict";
+    (function(root, factory) {
+      if (typeof define === "function" && define.amd) {
+        define(factory);
+      } else if (typeof exports === "object") {
+        module2.exports = factory();
+      } else {
+        factory()(root.lunr);
+      }
+    })(exports, function() {
+      return function(lunr) {
+        lunr.multiLanguage = function() {
+          var languages = Array.prototype.slice.call(arguments);
+          var nameSuffix = languages.join("-");
+          var wordCharacters = "";
+          var pipeline = [];
+          var searchPipeline = [];
+          for (var i = 0; i < languages.length; ++i) {
+            if (languages[i] == "en") {
+              wordCharacters += "\\w";
+              pipeline.unshift(lunr.stopWordFilter);
+              pipeline.push(lunr.stemmer);
+              searchPipeline.push(lunr.stemmer);
+            } else {
+              wordCharacters += lunr[languages[i]].wordCharacters;
+              if (lunr[languages[i]].stopWordFilter) {
+                pipeline.unshift(lunr[languages[i]].stopWordFilter);
+              }
+              if (lunr[languages[i]].stemmer) {
+                pipeline.push(lunr[languages[i]].stemmer);
+                searchPipeline.push(lunr[languages[i]].stemmer);
+              }
+            }
+          }
+          ;
+          var multiTrimmer = lunr.trimmerSupport.generateTrimmer(wordCharacters);
+          lunr.Pipeline.registerFunction(multiTrimmer, "lunr-multi-trimmer-" + nameSuffix);
+          pipeline.unshift(multiTrimmer);
+          return function() {
+            this.pipeline.reset();
+            this.pipeline.add.apply(this.pipeline, pipeline);
+            if (this.searchPipeline) {
+              this.searchPipeline.reset();
+              this.searchPipeline.add.apply(this.searchPipeline, searchPipeline);
+            }
+          };
+        };
+      };
+    });
+  }
+});
+
 // node_modules/lunr-languages/lunr.ru.js
 var require_lunr_ru = __commonJS({
   "node_modules/lunr-languages/lunr.ru.js"(exports, module2) {
@@ -655,10 +710,13 @@ var require_lunr_ru = __commonJS({
 
 // src/worker/langs/ru.ts
 var import_lunr_stemmer = __toESM(require_lunr_stemmer_support());
-var import_lunr = __toESM(require_lunr_ru());
+var import_lunr = __toESM(require_lunr_multi());
+var import_lunr2 = __toESM(require_lunr_ru());
 self.language = function(lunr) {
   (0, import_lunr_stemmer.default)(lunr);
+  (0, import_lunr2.default)(lunr);
   (0, import_lunr.default)(lunr);
+  lunr.multiLanguage("en", "ru");
   return lunr.ru;
 };
 /*! Bundled license information:
