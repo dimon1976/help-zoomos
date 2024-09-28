@@ -4,6 +4,17 @@ on:
   pull_request:
     paths: 'docs/**'
     types: [opened, synchronize]
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false  
 
 jobs:
   build-docs:
@@ -12,9 +23,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
       - name: Build
         uses: diplodoc-platform/docs-build-action@v3
         with:
           revision: "pr-${{ github.event.pull_request.number }}"
           src-root: "./docs"
+      - name: Verify build output
+        run: ls -la ./build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+            # Upload entire repository
+          path: './build'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
