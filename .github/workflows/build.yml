@@ -30,13 +30,14 @@ jobs:
         with:
           revision: "pr-${{ github.event.pull_request.number }}"
           src-root: "./docs"
+          build-root: './html'
       - name: Verify build output
         run: ls -la ./build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
             # Upload entire repository
-          path: './build'
+          path: './html'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
