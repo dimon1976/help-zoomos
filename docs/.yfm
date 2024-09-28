@@ -1,6 +1,6 @@
 allowHTML: true
 search: true
-
+# langs: ['ru','en']
 # outputFormat: html
 # supportGithubAnchors: true
 # needToSanitizeHtml: false
