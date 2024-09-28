@@ -37,7 +37,7 @@ jobs:
         uses: diplodoc-platform/docs-build-action@v3
         with:
           src-root: './docs'
-          build-root: './build'
+          build-root: '../build'
       - name: Verify build output
         run: ls -la ./build
       - name: Upload artifact
