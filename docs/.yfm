@@ -26,3 +26,10 @@ docs-viewer:
     img-has:
       width: 158px
       offset: true
+
+connector:
+    type: github
+    github: 
+        endpoint: https://api.github.com
+        owner: dimon1976
+        repo: help-zoomos
