@@ -99,10 +99,6 @@
 
 
 
-###### Тест H6
-
-
-
 [image1]: ../../../_assets/price-handler/Screenshot_2024_09_15-4.png
 [image2]: ../../../_assets/price-handler/Screenshot_2024_09_15-7.png
 [image3]: ../../../_assets/price-handler/Screenshot_2024_09_15-8.png
