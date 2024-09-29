@@ -39,7 +39,7 @@ jobs:
           src-root: './docs'
           build-root: './docs-html'
       - name: Verify build output
-        run: ls -la ./build
+        run: ls -la ./docs-html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
