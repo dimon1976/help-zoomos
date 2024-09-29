@@ -37,27 +37,14 @@ jobs:
         uses: diplodoc-platform/docs-build-action@v3
         with:
           src-root: './docs'
-<<<<<<< HEAD
           build-root: './build'
       - name: Verify build output
         run: ls -la ./build
-=======
-          build-root: './html'
-      - name: Verify build output
-        run: ls -la ./html
->>>>>>> 9b37f5064b60e4b86ff15dd1147d3b836eef5b2a
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-<<<<<<< HEAD
           path: './build'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-=======
-          path: './html'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
->>>>>>> 9b37f5064b60e4b86ff15dd1147d3b836eef5b2a
