@@ -1,0 +1,164 @@
+endpoint:
+  get:
+    tags:
+      - item
+    summary: List project items
+    description: Prompta unum sit regione mel definitiones. Tota quo honestatis perpetua facilis eruditi. Tation possim qui magnis convallis voluptaria ancillae.
+    parameters:
+      - name: app_project_id
+        in: path
+        description: Pharetra etiam necessitatibus felis magna fugit.
+        required: true
+        schema:
+          type: string
+      - name: after_id
+        in: query
+        description: Nominavi quaeque malorum ornatus periculis verear maiorum eruditi docendi cu.
+        required: false
+        schema:
+          type: string
+      - name: batch_id
+        in: query
+        description: Quo mandamus ante finibus ornare.
+        required: false
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: Deserunt intellegat tota eu propriae iusto torquent.
+        required: false
+        schema:
+          type: string
+      - name: id_gt
+        in: query
+        description: Mentitum mandamus ultricies ei reprimique iaculis definitionem urbanitas.
+        required: false
+        schema:
+          type: string
+      - name: id_gte
+        in: query
+        description: Tibique lacinia ad mea eripuit.
+        required: false
+        schema:
+          type: string
+      - name: id_lt
+        in: query
+        description: Quam alia eget sonet offendit tacimates nullam invidunt dictumst.
+        required: false
+        schema:
+          type: string
+      - name: id_lte
+        in: query
+        description: Conclusionemque sententiae vituperata nostra odio ex ancillae per.
+        required: false
+        schema:
+          type: string
+      - name: created_gt
+        in: query
+        description: Elementum perpetua unum latine curae.
+        required: false
+        schema:
+          type: string
+      - name: created_gte
+        in: query
+        description: Diam ei aliquip magnis imperdiet interpretaris.
+        required: false
+        schema:
+          type: string
+      - name: created_lt
+        in: query
+        description: Constituto veri mucius ne suas pellentesque epicuri neque.
+        required: false
+        schema:
+          type: string
+      - name: created_lte
+        in: query
+        description: Assueverit iuvaret alia scelerisque congue urbanitas.
+        required: false
+        schema:
+          type: string
+      - name: finished_gt
+        in: query
+        description: Voluptatum vocent mnesarchum cum adipiscing singulis et mediocritatem.
+        required: false
+        schema:
+          type: string
+      - name: finished_gte
+        in: query
+        description: Tamquam integer persequeris solet volutpat.
+        required: false
+        schema:
+          type: string
+      - name: finished_lt
+        in: query
+        description: Justo fames quot ocurreret ancillae torquent habemus erroribus fastidii.
+        required: false
+        schema:
+          type: string
+      - name: finished_lte
+        in: query
+        description: Atqui mus nisi partiendo iudicabit.
+        required: false
+        schema:
+          type: string
+
+    responses:
+      '200':
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '../schemas.yaml#/schemas/ItemListResult'
+        description: OK
+      '404':
+        description: Eos massa vim laudem vehicula quaestio falli fusce a in.
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas.yaml#/schemas/RequestError'
+
+  post:
+    tags:
+      - item
+    summary: Update project items
+    description: Elitr moderatius deserunt persius quisque. Elitr option luctus utroque ridiculus mnesarchum dissentiunt. Imperdiet scripta dapibus ridens postea quam errem. Dis ea habemus id lobortis malesuada detraxit.
+    parameters:
+      - name: app_project_id
+        in: path
+        description: Iuvaret definitionem suscipit justo detraxit graecis quis sed.
+        required: true
+        schema:
+          type: string
+    requestBody:
+      description: Semper scripta eripuit cetero sociosqu discere splendide aeque neglegentur.
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas.yaml#/schemas/ItemCreateForm'
+    responses:
+      '200':
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas.yaml#/schemas/Item'
+        description: OK
+      '404':
+        description: At mandamus facilisis accusata definitionem.
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas.yaml#/schemas/RequestError'
+      '400':
+        description: Reformidans doming commune elit pellentesque inani.
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas.yaml#/schemas/RequestError'
+      '403':
+        description: Atqui porttitor fuisset fames dolorem.
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas.yaml#/schemas/RequestError'

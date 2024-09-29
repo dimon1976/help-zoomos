@@ -1,0 +1,17 @@
+endpoint:
+  post:
+    tags:
+      - app-project
+    summary: Project archive
+    description: Rhoncus atqui ipsum verear ridiculus ferri cum. Vivendo erat persius definiebas novum vero. Vocibus mei adipiscing eloquentiam duis. Dictum vituperatoribus iusto ipsum himenaeos iisque ornatus consectetur his prompta.
+    parameters:
+      - name: app_project_id
+        in: path
+        description: Numquam aperiri adipisci sem sagittis antiopam feugiat at altera has.
+        required: true
+        schema:
+          type: string
+
+    responses:
+      '200':
+        description: OK

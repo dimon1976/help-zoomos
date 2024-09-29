@@ -1,0 +1,3 @@
+default:
+  quontity-product-descriptions: 1 млн.
+  supported-formats: XLSX, XLS (кроме Excel'95), CSV, TXT, YML
