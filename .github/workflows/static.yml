@@ -42,9 +42,9 @@ jobs:
         run: ls -la ./build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        with:
+        # with:
           # Upload entire repository
-          path: './docs-html'
+          # path: './docs-html'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
