@@ -40,11 +40,11 @@ jobs:
           build-root: './docs-html'
       - name: Verify build output
         run: ls -la ./build
-      # - name: Upload artifact
-      #   uses: actions/upload-pages-artifact@v3
-        # with:
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
           # Upload entire repository
-          # path: './docs-html'
+          path: './docs-html'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
