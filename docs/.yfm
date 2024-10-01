@@ -1,5 +1,5 @@
 allowHTML: true
-# search: true
+search: true
 # langs: ['ru','en']
 # outputFormat: html
 # supportGithubAnchors: true
@@ -7,7 +7,7 @@ allowHTML: true
 
 resources:
   style:
-    # - _assets/style/custom.css
+    - _assets/style/custom.css
 
 
 docs-viewer:

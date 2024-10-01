@@ -1,7 +1,5 @@
 # Автоматическая загрузка прайс-листов
 
-<iframe src="https://vk.com/video_ext.php?oid=-211967493&id=456239880&hd=2&autoplay=1" width="853" height="480" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
-
 ## Настройка прайс-листов из почтового ящика
 
 1\. Переходим во вкладку "Настройки" -> "Настройка прайсов"
@@ -64,20 +62,31 @@
 
 - Yandex
 
-  text 1
+  ![протокол IMAP](../../../_assets/price-handler/auto/Screenshot_2024_10_01-1(1).png)
 
 - Gmail
 
-  text 2
+  ![протокол IMAP](../../../_assets/price-handler/auto/Screenshot_2024_10_01-2.png)
 
 {% endlist %}
 
 
-<!-- ![Настройки IMAP](export/services/2022-01-12_14-17-53.png) -->
-
 **Включение двухэтапной аутентификации:**
 
-<!-- ![Двухэтапная аутентификация](export/services/двух_этапная_аутентификация.png) -->
+{% list tabs %}
+
+- Gmail
+
+  ![Двухэтапная аутентификация](../../../_assets/price-handler/auto/Screenshot_2024_10_01-5.png)
+
+
+{% endlist %}
+
+***
+
+---
+
+___
 
 **Добавление пароля приложения:**
 
