@@ -1,1 +1,5 @@
-{}
+{
+  "dependencies": {
+    "@diplodoc/transform": "^4.32.2"
+  }
+}
