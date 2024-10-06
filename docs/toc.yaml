@@ -1,7 +1,7 @@
 href: index.yaml
 navigation:
   logo:
-    url: ./index.html
+    url: "./"
     urlTitle: 'Вернуться на главную'
     dark:
       icon: _assets/logo/logo-zoomos5.png
@@ -16,8 +16,9 @@ navigation:
         text: API
         url: ./api/index.html
     rightItems:
-      - type: controls
       # - type: search
+      - type: controls
+
 items:
   - name: Документация
     href: index.yaml
