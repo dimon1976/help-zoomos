@@ -16,7 +16,7 @@ navigation:
         text: API
         url: ./api/index.html
     rightItems:
-      # - type: search
+      - type: search
       - type: controls
 
 items:

@@ -1,4 +1,7 @@
 allowHTML: true
+
+[//]: # npm i -g @diplodoc/cli@latest
+
 search: true
 # langs: ['ru','en']
 # outputFormat: html
